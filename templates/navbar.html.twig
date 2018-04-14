@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-amzn">
+	<div class="container">
+      <a class="navbar-brand" href="{{ path('homepage') }}">Getting<span class="text-amzn-orange">To</span>Know<span class="text-amzn-orange">AWS</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link {{ (app.request.attributes.get('_route')=='homepage') ? 'active' : '' }}" href="{{ path('homepage') }}">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link {{ (app.request.attributes.get('_route')=='comments') ? 'active' : '' }}" href="{{ path('comments') }}">Comments</a>
+          <a class="nav-item nav-link disabled" href="#">Pricing</a>
+        </div>
+      </div>
+     </div>
+</nav>

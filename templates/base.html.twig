@@ -1,0 +1,53 @@
+{# Base layout #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Getting to Know Amazon Web Services">
+        <meta property="og:url" content="{{ app.request.uri }}">
+        <meta property="og:image" content="{{ asset('build/images/og-image.png') }}">
+        {% block metatags %}{% endblock %}
+        
+        <link rel="stylesheet" href="{{ asset('build/css/style.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        	<header id="header">
+        		{% block header %}
+        			{% include('navbar.html.twig') %}
+        		{% endblock %}
+        	</header>
+        	{% block flash %}
+        		{% set flashes = app.flashes %}
+        		{% if flashes|length > 0 %}
+            		<div id="flash-message-container" class="container flash-container">
+                		{% for label, messages in flashes %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                                  {{ message }}
+                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+            		</div>
+        	    {% endif %}
+        	{% endblock %}
+         	<main id="content">
+         	    {% block content %}{% endblock %}
+         	</main>
+         	{% block footer %}
+            	{% include('footer.html.twig') %}
+            {% endblock %}
+        {% endblock %}
+        
+        {% block javascripts %}{% endblock %}
+        <script src="{{ asset('build/js/scripts.js') }}"></script>
+    </body>
+</html>

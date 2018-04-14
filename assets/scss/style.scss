@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+$font-family-serif:      'Bree Serif', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-sans-serif: 'Fira Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$container-max-widths: (
+  sm: 540px,
+  md: 600px,
+  lg: 700px,
+  xl: 800px
+);
+
+/*
+\definecolor{amzn}{HTML}{F8991D}
+\definecolor{amzn-background}{HTML}{232F3E}
+\definecolor{whitebackground}{HTML}{F9F9F9}
+\definecolor{amzn-green}{HTML}{4F772D}
+%\definecolor{amzn-red}{HTML}{F2545B}
+\definecolor{amzn-red}{HTML}{A20021}
+\definecolor{amzn-grey}{HTML}{6E767F}
+*/
+
+$amzn-blue: #232F3E;
+$amzn-orange: #F8991D;
+$amzn-white: #F9F9F9;
+$amzn-green: #4F772D;
+$amzn-red: #A20021;
+$amzn-grey: #6E767F;
+
+$body-color: $amzn-blue; //override default bootstrap body color
+
+/*
+// Required
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Optional
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/code";
+@import "node_modules/bootstrap/scss/jumbotron";
+@import "node_modules/bootstrap/scss/grid";
+*/
+
+@import "node_modules/bootstrap/scss/bootstrap";	
+
+body {
+	display: flex;
+	min-height: 100vh;
+  flex-direction: column;
+  font-family: $font-family-sans-serif;
+}
+
+#content {
+	flex: 1;
+}
+
+/*******************************************************
+ * HERO
+ ******************************************************/
+.jumbotron {
+  background-image: url(../assets/img/clouds.jpg);
+  //min-height: 50%;
+  background-repeat: no-repeat;
+  background-position: top;
+  -webkit-background-size: cover;
+  background-size: cover;
+  //height: 25vh;
+  //padding: 1rem 3rem;
+  border-radius: 0;
+}
+
+/*******************************************************
+ * BUTTONS
+ ******************************************************/
+.btn-amzn-blue {
+  background-color: $amzn-blue;
+  border-color: darken($amzn-blue,3);
+  color: white;
+  &:hover {
+    color: white;
+    background-color: darken($amzn-blue,2);
+    border-color: darken($amzn-blue,5);
+  }
+}
+
+/*******************************************************
+ * UTILITY
+ ******************************************************/
+.lead {
+  font-size: 2rem; //override bs 1.25
+}
+
+.sans {
+  font-family: $font-family-serif;
+}
+
+.bg-amzn {
+  background: $amzn-blue;
+}
+
+.text-amzn-orange {
+  color: $amzn-orange;
+}
+
+.flash-container {
+	margin-top: 1rem;
+}
+
+/*******************************************************
+ * FOOTER
+ ******************************************************/
+
+$footer-dark-color:                 rgba($white, .5) !default;
+$footer-dark-hover-color:           rgba($white, .75) !default;
+$footer-dark-active-color:          $white !default;
+$footer-dark-disabled-color:        rgba($white, .25) !default;
+
+$footer-dark-background: $amzn-blue;
+$footer-inner-background: darken($footer-dark-background,10);
+
+.footer {
+  padding-top: $spacer;
+  background: $footer-dark-background;
+  color: $footer-dark-color;
+  a {
+    color: $amzn-orange;
+    &:hover {
+      color: darken($amzn-orange,10);
+    }
+    //&:visited {
+    //  color: darken($amzn-orange,20);
+    //}
+  }
+  .footer-bottom{
+  	padding: 5px;
+    background: $footer-inner-background;
+    p {
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+}
+
+/*******************************************************
+ * FOOTER
+ ******************************************************/

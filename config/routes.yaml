@@ -1,0 +1,7 @@
+homepage:
+    path: /
+    controller: App\Controller\HomepageController::index
+
+comments:
+    path: /comments
+    controller: App\Controller\CommentsController::index

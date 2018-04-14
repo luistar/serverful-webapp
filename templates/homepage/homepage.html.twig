@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+	{# Hero Unit #}
+	<section class="jumbotron">
+		<div class="container">
+          <h1 class="display-4">Eeew! What do you mean you don't know AWS?</h1>
+          <p class="lead">Don't worry, we've got you covered!</p>
+          {#
+          <hr class="my-4">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </p>
+          #}
+          <p class="lead">
+            <a class="btn btn-amzn-blue btn-lg pull-right" href="#" role="button" id="learnMoreButton">Learn more</a>
+          </p>
+        </div>
+	</section>
+	{# Main features #}
+	<section id="features" class="mt-3">
+		<div class="container">
+			<h2 class="text-center mb-5">Get to know Amazon Web Services with our talk</h2>
+			<div class="row">
+				<div class="col">
+					<h3 class="text-center"><i class="far fa-smile fa-5x text-amzn-orange mb-3"></i><br/>Fun</h3>
+					<p>We promise you won't get bored during our two-hour long talk!</p>
+				</div>
+				<div class="col">
+					<h3 class="text-center"><i class="fas fa-code fa-5x text-amzn-orange mb-3"></i><br/>Pragmatic</h3>
+					<p>We'll have multiple demos!</p>
+				</div>
+				<div class="col">
+					<h3 class="text-center"><i class="fab fa-aws fa-5x text-amzn-orange mb-3"></i><br/>Useful</h3>
+					<p>Cloud computing is a fast-growing business and AWS is the undisputed market leader.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	{# Location and time #}
+	
+	<section id="info" class="mt-3">
+		
+		{% block javascripts %}
+			<script src='https://maps.googleapis.com/maps/api/js?key={{ gmaps_api_key }}'></script>
+		{% endblock %}
+		
+		<div style='overflow:hidden;height:440px;'>
+			<div id='gmap_canvas' style='height:440px;'></div>
+		</div>
+	</section>
+	
+{% endblock %}

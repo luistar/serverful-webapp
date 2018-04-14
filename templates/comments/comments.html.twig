@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Let me know what you think!{% endblock %}
+
+{% block content %}    
+	<div class="container mt-3">
+    	<h1>Let me know what you think!</h1>
+    	
+    	<div class="comment-form mt-3">
+            {% if app.request.cookies.get('commented') or commented %} {# user already commented #}
+                <h3>Thanks for leaving a comment, {{ author ?? app.request.cookies.get('commented') }}!</h3>
+            {% else  %}
+            	{{ form_start(form) }}
+                {{ form_widget(form) }}
+                <div class="form-group">
+                	<button type="submit" class="btn btn-amzn-blue">Send Comment!</button>
+                </div>
+                {{ form_end(form) }}
+        {% endif %}
+        </div>
+        
+        <div class="comment-box mb-3 mt-3">
+            {% if comments|length > 0 %}
+            	<h2>{{ comments|length }} {{ (comments|length)==1 ? 'comment' : 'comments' }}</small></h2>
+                <ul class="list-group">
+                {% for comment in comments %}
+                    {#<li>{{ comment.author|e|capitalize }} - <em>{{ comment.text|e }}</em> - {{ comment.timestamp|date('M d, Y') }}</li>#}
+                    <li class="list-group-item">
+                    	<div class="media">
+                      <img class="align-self-top mr-3 rounded-circle" src="//api.adorable.io/avatars/64/{{ comment.author }}" alt="{{ comment.author }}'s avatar">
+                      <div class="media-body">
+                        <h5 class="mt-0">{{ comment.author|e }} <small class="text-muted display" title="{{ comment.timestamp|date() }}">on {{ comment.timestamp|date('M, d Y') }}</small></h5>
+                        {{ comment.text|e }}
+                      </div>
+                      </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+            	<h2>There are currently no comments :(<br/>
+            	Be the first to leave one!</h2>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
