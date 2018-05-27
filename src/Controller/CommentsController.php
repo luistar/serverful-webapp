@@ -29,8 +29,6 @@ class CommentsController extends Controller {
         
         $response = new Response();
         
-        $entityManager = $this->getDoctrine()->getManager('default');
-        
         $comment = new Comment();
         
         $form = $this->createForm(CommentForm::class, $comment);
@@ -39,8 +37,6 @@ class CommentsController extends Controller {
         
         if ($form->isSubmitted()) {
             
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
             $comment = $form->getData();
             $comment->setTimestamp(new \DateTime());
             
@@ -51,7 +47,7 @@ class CommentsController extends Controller {
                         'Oops! Looks like you already submitted a comment, '.$request->cookies->get('commented').'!'
                     );
                 }
-                else {
+                else { // persist comment
                     $entityManager = $this->getDoctrine()->getManager();
                     $entityManager->persist($comment);
                     $entityManager->flush();

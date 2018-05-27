@@ -19,6 +19,11 @@ class CommentRepository extends ServiceEntityRepository
         parent::__construct($registry, Comment::class);
     }
 
+    public function findAll()
+    {
+        return $this->findBy([], ['timestamp' => 'DESC']);
+    }
+
 //    /**
 //     * @return Comment[] Returns an array of Comment objects
 //     */
