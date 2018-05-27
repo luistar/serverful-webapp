@@ -60,7 +60,7 @@ function init_map(){
                 University of Naples, Federico II<br/>
                 Strada Vicinale Cupa Cintia, 21, 80126 Naples, Italy<br/>
                 Room H5<br/>
-                Wednesday May, 28th 2018 at 2 PM<br/>
+                Monday May, 28th 2018 at 2 PM<br/>
             </p>
         `;
 
