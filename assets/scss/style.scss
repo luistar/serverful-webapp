@@ -122,7 +122,7 @@ $footer-dark-disabled-color:        rgba($white, .25) !default;
 $footer-dark-background: $amzn-blue;
 $footer-inner-background: darken($footer-dark-background,10);
 
-.footer {
+footer {
   padding-top: $spacer;
   background: $footer-dark-background;
   color: $footer-dark-color;

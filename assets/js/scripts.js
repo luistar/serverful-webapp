@@ -34,124 +34,6 @@ function TitleControl(controlDiv, map) {
                 
     
 function init_map(){
-    /*
-    var styledMapType = new google.maps.StyledMapType(  [
-            {
-                "featureType": "all",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#f8991d"
-                    }
-                ]
-            },
-            {
-                "featureType": "all",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "gamma": 0.01
-                    },
-                    {
-                        "lightness": 20
-                    }
-                ]
-            },
-            {
-                "featureType": "all",
-                "elementType": "labels.text.stroke",
-                "stylers": [
-                    {
-                        "saturation": -31
-                    },
-                    {
-                        "lightness": -33
-                    },
-                    {
-                        "weight": 2
-                    },
-                    {
-                        "gamma": 0.8
-                    }
-                ]
-            },
-            {
-                "featureType": "all",
-                "elementType": "labels.icon",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "lightness": 30
-                    },
-                    {
-                        "saturation": 30
-                    }
-                ]
-            },
-            {
-                "featureType": "poi",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "saturation": 20
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.park",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "lightness": 20
-                    },
-                    {
-                        "saturation": -20
-                    }
-                ]
-            },
-            {
-                "featureType": "road",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "lightness": 10
-                    },
-                    {
-                        "saturation": -30
-                    }
-                ]
-            },
-            {
-                "featureType": "road",
-                "elementType": "geometry.stroke",
-                "stylers": [
-                    {
-                        "saturation": 25
-                    },
-                    {
-                        "lightness": 25
-                    }
-                ]
-            },
-            {
-                "featureType": "water",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "lightness": -20
-                    }
-                ]
-            }
-        ], {name: 'Styled Map'});
-    */
 
         var myOptions = {
             zoom: 13,
@@ -160,10 +42,6 @@ function init_map(){
             disableDefaultUI: true
         };
         map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
-
-        //map.mapTypes.set('styled_map', styledMapType);
-        //map.setMapTypeId('styled_map');
-
 
         var centerControlDiv = document.createElement('div');
         var centerControl = new TitleControl(centerControlDiv, map);
@@ -182,7 +60,7 @@ function init_map(){
                 University of Naples, Federico II<br/>
                 Strada Vicinale Cupa Cintia, 21, 80126 Naples, Italy<br/>
                 Room H5<br/>
-                Wednesday May, 25th 2018 at 11 AM<br/>
+                Wednesday May, 28th 2018 at 2 PM<br/>
             </p>
         `;
 
