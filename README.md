@@ -1,7 +1,7 @@
 # serverful-webapp
 A very simple demo app built as part of my talk on AWS. Powered by Symfony 4.
 The app is a website for the talk and consists of a homepage and a comment page where users can leave comments.
-The comments are saved on a mysql database.
+The comments are saved on a mysql database. For a serverless version of this web app check out [serverless-webapp](https://github.com/luistar/serverless-webapp/).
 
 ## Requirements
 This web application requires
